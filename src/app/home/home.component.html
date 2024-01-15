@@ -1,0 +1,297 @@
+<body>
+    
+    <nav class=" navbar navbar-expand-lg  mainnavbar">
+        <div class="container-fluid " >
+         <div class="hello">
+    
+          <button class="eng-ar " (click)="toggleLayout(); switchLanguage()">EN/AR</button>
+          <button class="btn editbtn " >
+            <span class="edit">  {{'home.edit'|translate}}</span> <i class="fa-regular fa-pen-to-square"></i>
+          </button>
+        </div>
+        <div class="hello2">
+          <ul class="navbar-nav  mb-2 mb-lg-0  ">
+           
+              <li class="nav-item">
+                <span>{{'home.title'|translate}}</span>
+                <button class="btn " routerLink="/navbar">
+                   <i class="fa-solid fa-arrow-right"></i>
+                </button>
+               </li>
+          </ul>
+        </div>
+        </div>
+    </nav>
+    
+    
+    <div class="container-fluid cont">
+        
+    <!-- purpel container wth QR code -->
+      <div class="leftside">
+    
+       <div class="top">
+         <div class="button"> 
+        <button class="btn  popup-button">
+      <i class="fa-regular fa-trash-can"></i>
+      <div class="popup">{{'home.delete'|translate}}</div>
+    </button> 
+     
+        </div>
+         
+         <div class="content">
+    
+        <h6 >{{'home.ticketshow'|translate}}</h6>
+        <div class="linkcopy">
+        <button #copyButton class="btn button2" ><i class="fa-regular fa-paste"></i></button>  
+        <input #linkInput type="text" value="www.tazkty.com/473847" readonly>
+        </div>
+            <h6>{{'home.timetarget'|translate}}</h6>
+        </div>
+    <!-- dashh line -------- -->
+           
+            </div>  
+       <div class="dashed-line-container">
+                <!-- <span>--------------------------</span> -->
+                 </div>
+        <div class="down">
+            <div class="image ">
+                <img src="../../assets/QR.jpg" alt="QR code image">
+               
+            </div>
+            <div class="bottom">
+        <div class="flybtn">
+           <button class="btn"> <span>{{'home.share'|translate}}</span><i class="fa-regular fa-paper-plane  share"></i></button>
+                   </div>
+                <div class="content2">
+    
+        <h6>{{'home.share'|translate}}</h6>
+        <h6>25%</h6>
+       </div>
+        
+    </div>
+    
+       
+    </div>
+          
+             </div>
+    
+    <div class="rightside">
+        <div class="upper">
+        <div class="date-option">
+            <select id="options" class="time-options">
+                <option value="option1" selected>{{'home.year'|translate}}</option>
+                <option value="option2">{{'home.month'|translate}}</option>
+                <option value="option3"> {{'home.day'|translate}}</option>
+            </select>
+         
+        </div>
+        <div class="content text-center">
+            <h6>{{'home.labelofprecent'|translate}}</h6>
+            <select id="options" class="chart-options">
+              <option value="option1"selected>{{'home.option1'|translate}}</option>
+              <option value="option1">{{'home.option2'|translate}}</option>
+              <option value="option1">{{'home.option3'|translate}}</option>
+              <option value="option1">{{'home.option4'|translate}}</option>
+              <option value="option1">{{'home.option5'|translate}}</option>
+              <option value="option1">{{'home.option6'|translate}}</option>
+              <option value="option1">{{'home.option7'|translate}}</option>
+              <option value="option1">{{'home.option8'|translate}}</option>
+              <option value="option1">{{'home.option9'|translate}}</option>
+              <option value="option1">{{'home.option10'|translate}}</option>
+              <option value="option1">{{'home.option11'|translate}}</option>
+              <option value="option1">{{'home.option1'|translate}}</option>
+                
+            </select>
+        </div>
+    </div>
+        <div id="myChart"class="chart">
+          <canvas id="tensionLineChart"></canvas>
+        </div>
+    
+    </div>
+    
+    
+    </div>
+    <div class="container-fluid cont2">
+    
+    <div class="middel">
+    <div class="one">
+    <button class="btn2">{{'home.register'|translate}}</button>
+    </div>
+    <div class="two">
+    <label class="switch ms-auto" >
+        <span class="label-text">{{'home.Active'|translate}}</span>
+        <input type="checkbox" checked>
+        <span class="slider"></span>
+    </label>
+    </div>
+    </div>
+    <div class="group"> 
+        <div class="arrow">
+        <button class="arow1 btn"> 
+            
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+        </button>
+        <button class="btn"><i class="fa-solid fa-sliders"></i></button>
+        </div>
+       
+        
+    <div class="search">
+        <input id="searchInput" class="input" type="search" placeholder=" {{'home.searchon'|translate}}"  (input)="searchTable()" />
+        <i class="fas fa-search"></i>
+        
+    </div>
+    <div class="label">
+        <span> {{'home.ticket-payments'|translate}}</span>
+    </div>
+        
+    </div> 
+    </div>
+    
+    
+    <div class="container-fluid cont3">
+        <table class="table text-center">
+            <thead>
+              <tr>
+              <th>{{'home.ticket-payments'|translate}}</th>
+              <th>{{'home.numeofbuys'|translate}}</th>
+              <th>{{'home.user-num'|translate}}</th>
+              <th>{{'home.cinemas'|translate}}</th>
+              <th>{{'home.ticket-price'|translate}}</th>
+              <th>{{'home.ticket-num'|translate}}</th>
+              <th>{{'home.user'|translate}}</th>
+                  <th>#</th>
+              </tr>
+            </thead>
+           <tbody id="tableData">
+              <tr>
+                <td>
+                  <a href="../../assets/ticket.pdf" download class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-download"></i>{{'home.pdf'|translate}}.pdf
+                    <i class="fa-solid fa-database icon"></i>
+                  </a>
+                </td>
+                <td>{{'home.once-use'|translate}}</td>
+                <td>1</td>
+                <td>{{'home.cinema-place'|translate}}</td>
+                <td>$40</td>
+                <td>C-101</td>
+                <td class="name">
+                  <div class="info d-flex flex-column">
+                    <span>{{'home.name1'|translate}}</span>
+                    <span class="phone">0123456789</span>
+                  </div>
+                  <img src="../../assets/person 3.jpg" />
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="../../assets/ticket.pdf" download class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-download"></i>{{'home.pdf'|translate}}.pdf
+                    <i class="fa-solid fa-database icon"></i>
+                  </a>
+                </td>
+                <td>{{'home.once-use'|translate}}</td>
+                <td>1</td>
+                <td>{{'home.cinema-place'|translate}}</td>
+                <td>$30</td>
+                <td>C-102</td>
+                <td class="name">
+                  <div class="info d-flex flex-column">
+                    <span>{{'home.name2'|translate}}</span>
+                    <span class="phone">0123456789</span>
+                  </div>
+                  <img src="../../assets/person2.jpg" />
+                </td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="../../assets/ticket.pdf" download class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-download"></i>{{'home.pdf'|translate}}.pdf
+                    <i class="fa-solid fa-database icon"></i>
+                  </a>
+                </td>
+                <td>مرة واحدة</td>
+                <td>1</td>
+                <td>{{'home.cinema-place'|translate}}</td>
+                <td>$45</td>
+                <td>C-102</td>
+                <td class="name">
+                  <div class="info d-flex flex-column">
+                    <span>{{'home.name3'|translate}}</span>
+                    <span class="phone">0123456789</span>
+                  </div>
+                  <img src="../../assets/person 5.jpg" />
+                </td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="../../assets/ticket.pdf" download class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-download"></i>{{'home.pdf'|translate}}.pdf
+                    <i class="fa-solid fa-database icon"></i>
+                  </a>
+                </td>
+                <td>{{'home.once-use'|translate}}</td>
+                <td>1</td>
+                <td>{{'home.cinema-place'|translate}}</td>
+                <td>$54</td>
+                <td>C-103</td>
+                <td class="name">
+                  <div class="info d-flex flex-column">
+                    <span>{{'home.name4'|translate}}</span>
+                    <span class="phone">0123456789</span>
+                  </div>
+                  <img src="../../assets/person 3.jpg" />
+                </td>
+                <td>4</td>
+              </tr>
+            </tbody>
+            <tfoot class="footer-container ">
+    
+            <tr>
+                <td>
+                    <ul class="page-list">
+                        <li><a href="#"><i class="fa-solid fa-arrow-left "></i></a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#" class="active">1</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right"></i></a></li>
+                    
+                    </ul>
+                </td>
+                
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                
+            <td> 
+                <span>{{'home.from250'|translate}}</span>
+                <select id="selectNumber">
+                    <option *ngFor="let number of numbers" [value]="number">{{ number }}</option>
+                </select>
+            
+                    <label for="selectNumber">{{'home.show'|translate}}</label>
+                   
+                
+                    
+            </td>
+            <td></td>
+            </tr>
+    
+                  
+        
+               
+              </tfoot>
+              
+            </table>
+    
+    
+    </div>
+    </body>
